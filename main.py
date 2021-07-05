@@ -5,7 +5,7 @@ import json
 from keep_alive import keep_alive
 
 client = discord.Client()
-default_city = None
+default_city = "toronto"
 
 # When given a city name in string format it returns the formatted weather forecast for the current day in string format, if the city does not exist, it returns None
 def get_weather(city):
@@ -44,7 +44,6 @@ async def on_message(message):
     #  await message.channel.send(get_weather(default_city))
     #else:
     #  await message.channel.send("Specify what city's weather you want to see, the right way to use the bot is: **!weather [NAME OF CITY]** or you can set a default city with: **!weather default [NAME OF CITY]**")
-    default_city = "toronto"
     await message.channel.send(get_weather(default_city))
     return
 
